@@ -33,7 +33,7 @@ Clone the repository to your local machine.
 4. Customize your dashboard by adding and removing widgets, selecting the data you want to see, and adjusting the layout.
 
 ## Contributing
-1. Fork the project from Github (https://githupb.com/onur-celik/invester)
+1. Fork the project from Github (https://github.com/onur-celik/invester)
 2. Add your feature / fix
 3. Send a pull request
 ## Credits
