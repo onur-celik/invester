@@ -1,3 +1,23 @@
+# in.vester Web App
+This is an opensource project which created by;
+**Mustafa Onur Çelik**
+- E-mail : onurcelik.dev@gmail.com
+- Github : https://github.com/onur-celik
+
+# Purpose
+Create an investment obserbing screen the way you desire.
+
+App uses; 
+- TradingView's widgets. (https://www.tradingview.com/widget/)[https://www.tradingview.com/widget/]
+
+Here is the widgetlist;
+- **Ticker** : You can follow the instrument's -you are interested in- last price;
+- **MiniChart** : This is most likely Ticker Widget but there is an area chart at the bottom of the widget.
+- **ChartBox** : Allows you insert TradingView Chart of your desire instrument**s**.
+- **EconomicalCalendar** : 
+- **TechnicalAnalysis** : 
+- **News** : 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

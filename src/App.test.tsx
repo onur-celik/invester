@@ -1,9 +1,16 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { screen, render, waitFor } from "@testing-library/react";
+import App from "./App";
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+// test("init the Board", async () => {
+//     render(<App />);
+//     const boardEl = await screen.findByTestId("Board");
+//     await waitFor(() => {
+//         expect(boardEl).toBeInTheDocument();
+//     });
+// });
+
+test("initial widgets renders in the board correctly", async () => {
+    render(<App />);
+    const widgetEls = await screen.findAllByTestId("Widget");
+    expect(widgetEls.length).toBeGreaterThan(1);
 });

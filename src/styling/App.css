@@ -1,0 +1,269 @@
+@import "./Colors.css";
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+        monospace;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: var(--text);
+
+    /* Prevent text selection */
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+#App {
+    width: 100vw;
+    height: 100vh;
+}
+
+#App.dark {
+    background-color: var(--darkness);
+}
+
+#App.light {
+    /* background-color: rgba(0, 0, 0, 0.1); */
+    background-color: var(--lightBackground);
+}
+
+#Layout {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+}
+
+#Header {
+    width: 100vw;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    font-size: 12px;
+    display: flex;
+}
+
+#AppLogo {
+    font-weight: 900;
+}
+
+#App.dark #Header {
+    color: var(--coolYellow);
+}
+#App.light #Header {
+    color: var(--darkness);
+}
+
+#Header .Col {
+    display: flex;
+    align-items: center;
+}
+
+#Header .Col:nth-of-type(2) {
+    flex-grow: 1;
+    justify-content: flex-end;
+}
+
+#Header .Col button {
+    margin-left: 10px;
+    border: none;
+    outline: none;
+    height: 20px;
+    border-radius: 4px;
+    padding: 0px 10px;
+    background-color: var(--textGray);
+    transition: color 0.2s ease-out, background-color 0.2s ease-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 900;
+}
+
+#Header .Col button.active,
+#Header .Col button:hover {
+    background-color: var(--coolYellow);
+    color: black;
+    cursor: pointer;
+}
+
+#Board {
+    flex: 1;
+    flex-grow: 1;
+    position: relative;
+    overflow: auto;
+}
+
+#ThemeSwitcher {
+    background: none !important;
+    width: 80px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#ThemeSwitcher div:nth-of-type(2) {
+    flex-grow: 1;
+}
+
+.versionInfo {
+    color: var(--textGray);
+    margin-left: 10px;
+}
+
+.Draggable {
+    position: absolute;
+    z-index: 10;
+    resize: both;
+    background-color: var(--darkness);
+}
+
+.addWidgetModalBackDrop {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    backdrop-filter: blur(3px);
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.addWidgetModal {
+    width: 700px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--darkness);
+    border-radius: 6px;
+    overflow: hidden;
+    background: var(--darkness);
+}
+
+.addWidgetModalHeader {
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    color: #fff;
+    font-size: 12px;
+    background: rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.9);
+    z-index: 2;
+}
+.addWidgetModalHeader .closeButton {
+    background: orangered;
+    height: 20px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    cursor: pointer;
+    opacity: 0.9;
+}
+.addWidgetModalHeader .closeButton:hover {
+    opacity: 1;
+}
+.addWidgetModalContent {
+    max-height: 50vh;
+    overflow: auto;
+    background: var(--darkness);
+    padding-bottom: 200px;
+}
+
+.WidgetBox {
+    padding: 15px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+    margin: 10px;
+    color: white;
+    transition: all 0.36s ease-out;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.WidgetBox:hover {
+    background-color: rgba(255, 255, 255, 0.14);
+}
+
+.WidgetBox .col {
+    display: flex;
+    align-items: center;
+}
+
+.WidgetBox .col:nth-of-type(2) {
+    justify-content: flex-end;
+    flex-grow: 1;
+    padding-right: 15px;
+}
+
+.addWidgetSymbolInput {
+    background: none;
+    border: none;
+    border: 1px solid white;
+    padding: 5px 10px;
+    border-radius: 6px;
+    margin-left: 15px;
+    color: white;
+}
+
+.addWidgetButton {
+    background: none;
+    border: none;
+    outline: none;
+    background: var(--coolYellow);
+    color: black;
+    padding: 5px 15px;
+    border-radius: 6px;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+#ThemeSwitcherWithAnimation {
+    height: 20px;
+    width: 40px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+#ThemeSwitcherWithAnimation #ThemeSwitcherWithAnimationInner {
+    height: 20px;
+    width: 40px;
+    display: flex;
+    position: absolute;
+    top: 50%;
+    transition: all 0.5s ease-in-out;
+    z-index: 999;
+}
+#ThemeSwitcherWithAnimation #ThemeSwitcherWithAnimationInner.day {
+    transform: rotate(-60deg);
+}
+#ThemeSwitcherWithAnimation #ThemeSwitcherWithAnimationInner.night {
+    transform: rotate(50deg);
+}
+#ThemeSwitcherWithAnimation #ThemeSwitcherWithAnimationInner .themeIcon {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+#ThemeSwitcherWithAnimation #ThemeSwitcherWithAnimationInner .themeIcon.day {
+}
+#ThemeSwitcherWithAnimation #ThemeSwitcherWithAnimationInner .themeIcon.night {
+    justify-content: flex-end;
+    transform: rotate(60deg);
+}

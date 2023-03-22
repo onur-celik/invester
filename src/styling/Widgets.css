@@ -1,0 +1,50 @@
+.widget {
+    border-radius: 4px;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+#App.light .widget {
+    background-color: white;
+    /* box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.2); */
+}
+#App.dark .widget {
+    background-color: var(--coolGray);
+    box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.widget .header {
+    height: 20px;
+    cursor: move;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5px;
+}
+
+#App.dark .widget .header {
+    background-color: var(--coolGray);
+    color: white;
+}
+#App.light .widget .header {
+    color: black;
+}
+
+.widget .header .widgetTitle {
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+}
+.widget .header .widgetButtons {
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+}
+
+.widget .content {
+    height: calc(100% - 20px);
+    overflow: hidden;
+}
