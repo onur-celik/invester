@@ -4,13 +4,13 @@ Create an investment observing screen the way you desire.
 ## Demo
 Working example can be found at https://in.vester.app
 ## Description
-**invester** is an open source project that provides a simple and intuitive way to track your investments in real-time. With this tool, you can easily monitor your portfolio and keep track of your investments' performance.
+**invester** is an open source project that provides a simple way to track your investments in real-time. With this tool, you can easily monitor your portfolio and keep track of your investments' performance.
 
 ### Features
 - **Real-time tracking**: Get up-to-date information on your favourite instruments.
 - **Customizable dashboard**: Personalize your dashboard to display the information you want to see.
 - **Multiple asset classes**: Track investments in stocks, mutual funds, ETFs, cryptocurrencies, and more.
-- **User-friendly interface**: Enjoy a sleek and intuitive interface that makes tracking investments a breeze.
+- **User-friendly interface**: Enjoy a sleek interface that makes tracking investments a breeze.
 - **Data visualization**: Use charts and graphs to see your investments' performance over time.
 
 ### Available Widgets
