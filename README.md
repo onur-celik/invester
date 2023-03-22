@@ -3,6 +3,7 @@ Create an investment observing screen the way you desire.
 
 ## Demo
 Working example can be found at https://in.vester.app
+![invester demo](https://firebasestorage.googleapis.com/v0/b/investerapp.appspot.com/o/invester-demo.png?alt=media&token=0338a366-b134-4af9-b8ac-f9a01cd12427)
 ## Description
 **invester** is an open source project that provides a simple way to track your investments in real-time. With this tool, you can easily monitor your portfolio and keep track of your investments' performance.
 
