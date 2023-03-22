@@ -34,7 +34,7 @@ Clone the repository to your local machine.
 
 ## Contributing
 1. Fork the project from Github (https://githupb.com/onur-celik/invester)
-2. Add your feature
+2. Add your feature / fix
 3. Send a pull request
 ## Credits
 - Mustafa Onur Çelik (Author)  
