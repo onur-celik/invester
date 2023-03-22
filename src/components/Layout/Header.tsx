@@ -42,7 +42,12 @@ export default function Header() {
                 >
                     <Plus size={14} style={{ marginRight: 8 }} /> Add Widget
                 </button>
-                <button>
+                <button
+                    onClick={() => {
+                        window.location.href =
+                            "https://github.com/onur-celik/invester";
+                    }}
+                >
                     <GitHub size={14} style={{ marginRight: 8 }} /> Source Code
                 </button>
                 <button
