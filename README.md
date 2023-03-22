@@ -1,11 +1,15 @@
-# in.vester Web App
+# invester
+> Create an investment observing screen the way you desire.
+
+
+
+
+
 This is an opensource project which created by;
 **Mustafa Onur Çelik**
 - E-mail : onurcelik.dev@gmail.com
 - Github : https://github.com/onur-celik
 
-# Purpose
-Create an investment obserbing screen the way you desire.
 
 App uses; 
 - TradingView's widgets. (https://www.tradingview.com/widget/)[https://www.tradingview.com/widget/]
