@@ -3,7 +3,7 @@ import { memo } from "react";
 import DeleteWidget from "../DeleteWidget";
 /*
     Chart Box Widget List
-    // https://tradingview-widgets.jorrinkievit.xyz/docs/intro
+    https://tradingview-widgets.jorrinkievit.xyz/docs/intro
 */
 
 const ChartBoxWidget = memo(function ({ symbol, id, theme }: ChartBoxProps) {
@@ -20,6 +20,7 @@ const ChartBoxWidget = memo(function ({ symbol, id, theme }: ChartBoxProps) {
                     width={"100%"}
                     height={"100%"}
                     interval="D"
+                    show_popup_button={true}
                     autosize
                     // eslint-disable-next-line
                     style={"1"}
