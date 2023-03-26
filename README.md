@@ -30,7 +30,10 @@ Clone the repository to your local machine.
 1. Install the necessary dependencies by running `npm install`.  
 2. Start the application by running `npm start`.  
 3. Access the application by navigating to http://localhost:3000 in your browser.
-4. Customize your dashboard by adding and removing widgets, selecting the data you want to see, and adjusting the layout.
+4. Customize your dashboard by adding and removing widgets, add widgets you want to see, and adjusting the layout.
+
+## Build
+Run `npm run build`
 
 ## Contributing
 1. Fork the project from Github (https://github.com/onur-celik/invester)
