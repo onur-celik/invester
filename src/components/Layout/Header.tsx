@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../store";
 import { GlobalData, toggleModalOpen, toggleTheme } from "../../store/global";
 import { Sun, Moon } from "react-feather";
+import Clock from "./Clock";
 
 export default function Header() {
     const [fullScreen, setFullScreen] = useState(false);
@@ -24,7 +25,6 @@ export default function Header() {
 
     function handleModal() {
         dispatch(toggleModalOpen(!global.modalOpen));
-        // console.log(global);
     }
 
     return (
@@ -32,6 +32,9 @@ export default function Header() {
             <div className="Col">
                 <span id="AppLogo">{APP_NAME}</span>
                 <span className="versionInfo">{APP_TITLE}</span>
+            </div>
+            <div className="Col">
+                <Clock />
             </div>
             <div className="Col">
                 <ThemeSwitcherWithAnimation />
