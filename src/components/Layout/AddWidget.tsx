@@ -25,7 +25,6 @@ export default function AddWidget() {
                     </div>
                     <div
                         onClick={() => {
-                            console.log("close modal..");
                             dispatch(toggleModalOpen(false));
                         }}
                         className="closeButton"
@@ -54,6 +53,7 @@ const WidgetBox = ({
     const [symbol, setSymbol] = useState("BTCUSDT");
     const { save } = useBoard();
     const global = useSelector((state: GlobalData) => state);
+    const dispatch = useDispatch();
     function handleAddWidget(data: {
         name: string;
         type_id: string;
@@ -78,6 +78,7 @@ const WidgetBox = ({
             layout: [...global.layouts, newLayoutItemItem],
             widgets: [...global.widgets, newWidgetItem],
         });
+        dispatch(toggleModalOpen(false));
     }
 
     return (
