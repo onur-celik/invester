@@ -14,7 +14,7 @@ const TechnicalAnalysisWidget = memo(function ({
     return (
         <div className="widget TechnicalAnalysisWidget">
             <div className="header">
-                <div className="widgetTitle">Technical Analysis</div>
+                <div className="widgetTitle">Technical Analysis - {symbol}</div>
                 <DeleteWidget id={id} />
             </div>
             <div className="content">

@@ -1,5 +1,5 @@
 import { AdvancedRealTimeChart } from "react-ts-tradingview-widgets";
-import { memo } from "react";
+import { memo, useState } from "react";
 import DeleteWidget from "../DeleteWidget";
 /*
     Chart Box Widget List
@@ -10,7 +10,7 @@ const ChartBoxWidget = memo(function ({ symbol, id, theme }: ChartBoxProps) {
     return (
         <div className="widget ChartBoxWidget">
             <div className="header">
-                <div className="widgetTitle">Chart</div>
+                <div className="widgetTitle">Chart - {symbol}</div>
                 <DeleteWidget id={id} />
             </div>
             <div className="content">

@@ -6,7 +6,7 @@ const MiniChartWidget = memo(function ({ symbol, id, theme }: MiniChartProps) {
     return (
         <div className="widget MiniChartWidget">
             <div className="header">
-                <div className="widgetTitle">Mini Chart</div>
+                <div className="widgetTitle">Mini Chart - {symbol}</div>
                 <DeleteWidget id={id} />
             </div>
             <div className="content">
