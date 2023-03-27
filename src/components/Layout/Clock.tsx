@@ -21,6 +21,7 @@ const Clock: React.FC = () => {
             second: "numeric",
             year: "numeric",
             month: "long",
+            day: "numeric",
         };
         const localeString = time.toLocaleString(navigator.language, options);
         setLocaleTime(localeString);
