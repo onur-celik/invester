@@ -10,7 +10,7 @@ export default function NewsWidget({ id, theme }: NewsProps) {
     useEffect(() => {
         if (theme === "dark") {
             let dark_colors = {
-                bg_color: "000000",
+                bg_color: "00000000",
                 header_text_color: "FFFFFF",
                 link_color: "FFFFFF",
                 text_color: "ffffff90",
@@ -20,7 +20,7 @@ export default function NewsWidget({ id, theme }: NewsProps) {
             );
         } else {
             let light_colors = {
-                bg_color: "ffffff",
+                bg_color: "ffffff00",
                 header_text_color: "000000",
                 link_color: "000000",
                 text_color: "000000",
