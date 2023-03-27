@@ -23,6 +23,7 @@ const TechnicalAnalysisWidget = memo(function ({
                     isTransparent
                     symbol={symbol}
                     width={"100%"}
+                    interval="1W"
                 ></TechnicalAnalysis>
             </div>
         </div>
