@@ -12,6 +12,8 @@ export type Widget = {
     i: string;
     type: string;
     symbol?: string;
+    title?: string;
+    content?: string;
 };
 export type WidgetInfo = Widget & Layout;
 

@@ -48,3 +48,39 @@
     height: calc(100% - 20px);
     overflow: hidden;
 }
+
+#App.dark .NoteWidget {
+    color: white;
+}
+.NoteWidget .content {
+    padding: 10px;
+}
+.NoteWidget .note_title {
+    font-weight: 900;
+    color: var(--darkness);
+    padding-bottom: 10px;
+    border: none;
+    outline: none;
+    display: block;
+    width: 100%;
+    background: none;
+}
+.NoteWidget .note_content {
+    width: 100%;
+    height: 90%;
+    border: none;
+    outline: none;
+    background: none;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+        monospace;
+    font-size: 12px;
+    resize: none;
+}
+
+#App.dark .NoteWidget .note_title {
+    color: white;
+}
+
+#App.dark .NoteWidget .note_content {
+    color: white;
+}

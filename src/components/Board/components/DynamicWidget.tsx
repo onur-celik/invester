@@ -7,6 +7,7 @@ import NewsWidget from "../Widgets/News/NewsWidget";
 import TickerTapeWidget from "../Widgets/TickerTape/TickerTape";
 import FearGreedWidget from "../Widgets/FearAndGreed/FearGreedWidget";
 import TVBox from "../Widgets/TVBox/TVBox";
+import NoteWidget from "../Widgets/Note/NoteWidget";
 import { useSelector } from "react-redux";
 import { GlobalData } from "../../../store/global";
 
@@ -64,6 +65,10 @@ export default function DynamicWidget({ widget }: DynamicWidgetProps) {
                 widgetData={widget}
             />
         );
+    }
+
+    if (widget.type === "NoteWidget") {
+        return <NoteWidget id={widget.i} />;
     }
 
     if (widget.type === "TickerTapeWidget") {

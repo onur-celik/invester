@@ -27,4 +27,9 @@ export const AVAILABLE_WIDGETS = [
         type_id: "TVBox",
         requirements: [],
     },
+    {
+        name: "Note",
+        type_id: "NoteWidget",
+        requirements: [],
+    },
 ];
