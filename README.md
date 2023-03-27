@@ -25,6 +25,7 @@ Working example can be found at https://in.vester.app
 8. **TV Box**: Live finance channels
 9. **Tickers Slider**: Go all vintage Wall Street with our scrolling ticker tape.
 10. **Note**: Take notes on your dashboard.
+11. **Podcasts**: Listen economy podcasts right in your dashboard.
 ## Installation
 Clone the repository to your local machine.
 ## Usage

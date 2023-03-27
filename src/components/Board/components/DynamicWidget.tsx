@@ -10,6 +10,7 @@ import TVBox from "../Widgets/TVBox/TVBox";
 import NoteWidget from "../Widgets/Note/NoteWidget";
 import { useSelector } from "react-redux";
 import { GlobalData } from "../../../store/global";
+import PodcastsWidget from "../Widgets/Podcasts/PodcastsWidget";
 
 export default function DynamicWidget({ widget }: DynamicWidgetProps) {
     const global = useSelector((state: GlobalData) => state);
@@ -81,6 +82,10 @@ export default function DynamicWidget({ widget }: DynamicWidgetProps) {
 
     if (widget.type === "TVBox") {
         return <TVBox id={widget.i} />;
+    }
+
+    if (widget.type === "PodcastsWidget") {
+        return <PodcastsWidget id={widget.i} />;
     }
 
     return (

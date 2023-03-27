@@ -84,3 +84,7 @@
 #App.dark .NoteWidget .note_content {
     color: white;
 }
+
+.PodcastsWidget .content {
+    overflow-y: auto;
+}

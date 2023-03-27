@@ -32,4 +32,9 @@ export const AVAILABLE_WIDGETS = [
         type_id: "NoteWidget",
         requirements: [],
     },
+    {
+        name: "Podcasts",
+        type_id: "PodcastsWidget",
+        requirements: [],
+    },
 ];
