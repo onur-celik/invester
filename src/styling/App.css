@@ -108,6 +108,7 @@ body {
     flex-grow: 1;
     position: relative;
     overflow: auto;
+    padding-bottom: 300px;
 }
 
 #ThemeSwitcher {
