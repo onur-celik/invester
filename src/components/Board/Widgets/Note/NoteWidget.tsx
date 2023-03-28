@@ -55,6 +55,7 @@ const NoteWidget = memo(function ({ id }: { id: string }) {
                     placeholder="Note Title"
                 />
                 <textarea
+                    spellCheck={false}
                     className="note_content"
                     ref={contentRef}
                     value={content}
