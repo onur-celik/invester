@@ -11,6 +11,7 @@ import NoteWidget from "../Widgets/Note/NoteWidget";
 import { useSelector } from "react-redux";
 import { GlobalData } from "../../../store/global";
 import PodcastsWidget from "../Widgets/Podcasts/PodcastsWidget";
+import BTCHalvingWidget from "../Widgets/BTCHalving/BTCHalvingWidget";
 
 export default function DynamicWidget({ widget }: DynamicWidgetProps) {
     const global = useSelector((state: GlobalData) => state);
@@ -86,6 +87,10 @@ export default function DynamicWidget({ widget }: DynamicWidgetProps) {
 
     if (widget.type === "PodcastsWidget") {
         return <PodcastsWidget id={widget.i} />;
+    }
+
+    if (widget.type === "BTCHalvingWidget") {
+        return <BTCHalvingWidget id={widget.i} />;
     }
 
     return (

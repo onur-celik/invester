@@ -38,4 +38,9 @@ export const AVAILABLE_WIDGETS = [
         type_id: "PodcastsWidget",
         requirements: [],
     },
+    {
+        name: "Bitcoin Next Halving",
+        type_id: "BTCHalvingWidget",
+        requirements: [],
+    },
 ];

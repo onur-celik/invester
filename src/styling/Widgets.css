@@ -77,6 +77,17 @@
     resize: none;
 }
 
+.BTCHalvingWidget .content {
+    padding: 0 10px;
+    color: var(--darkness);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+#App.dark .BTCHalvingWidget .content {
+    color: var(--coolYellow);
+}
+
 #App.dark .NoteWidget .note_title {
     color: white;
 }
