@@ -31,7 +31,6 @@ const TVBox = memo(function ({
 
     useEffect(() => {
         if (channel) {
-            console.log("SELECTED", channel);
             setSelectedChannel(
                 AVAILABLE_CHANNELS.filter(
                     (ch: ITVChannel) => ch.id === channel
