@@ -1,5 +1,5 @@
 import { AdvancedRealTimeChart } from "react-ts-tradingview-widgets";
-import { memo, useState } from "react";
+import { memo } from "react";
 import DeleteWidget from "../DeleteWidget";
 /*
     Chart Box Widget List

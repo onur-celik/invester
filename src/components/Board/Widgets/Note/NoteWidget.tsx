@@ -17,6 +17,7 @@ const NoteWidget = memo(function ({ id }: { id: string }) {
             }
             return w;
         });
+        // eslint-disable-next-line
     }, []);
 
     function saveNote(type: "title" | "content", newContent: string) {

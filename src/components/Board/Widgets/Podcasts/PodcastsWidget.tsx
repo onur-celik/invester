@@ -16,6 +16,7 @@ const PodcastsWidget = memo(function ({ id }: { id: string }) {
                     height="152"
                     allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                     loading="lazy"
+                    title="podcast1"
                 ></iframe>
                 <br />
                 <iframe
@@ -25,6 +26,7 @@ const PodcastsWidget = memo(function ({ id }: { id: string }) {
                     height="152"
                     allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                     loading="lazy"
+                    title="podcast2"
                 ></iframe>
                 <br />
                 <iframe
@@ -34,6 +36,7 @@ const PodcastsWidget = memo(function ({ id }: { id: string }) {
                     height="152"
                     allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                     loading="lazy"
+                    title="podcast3"
                 ></iframe>
             </div>
         </div>

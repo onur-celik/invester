@@ -7,6 +7,7 @@ import DynamicWidget from "./components/DynamicWidget";
 import { useSelector } from "react-redux";
 import { useBoard } from "../../hooks/useBoard";
 import { GlobalData } from "../../store/global";
+import { ArrowDownRight } from "react-feather";
 
 export type Widget = {
     i: string;
@@ -32,6 +33,13 @@ export default function Board() {
         <div id="Board" data-testid="Board">
             {global.board.length > 0 && (
                 <GridLayout
+                    resizeHandles={["s", "se", "e"]}
+                    autoSize={true}
+                    draggableHandle={".header"}
+                    isBounded={false}
+                    useCSSTransforms={true}
+                    preventCollision={false}
+                    verticalCompact={true}
                     className="layout"
                     containerPadding={[10, 0]}
                     layout={global.board}

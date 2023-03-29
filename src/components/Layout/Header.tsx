@@ -1,9 +1,16 @@
 import { useEffect, useState } from "react";
-import { GitHub, Plus, Maximize, Minimize } from "react-feather";
+import { GitHub, Plus, Maximize, Minimize, Trash2 } from "react-feather";
 import { APP_NAME, APP_TITLE } from "../../constants/config";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../store";
-import { GlobalData, toggleModalOpen, toggleTheme } from "../../store/global";
+import {
+    GlobalData,
+    setBoard,
+    setLayouts,
+    setWidgets,
+    toggleModalOpen,
+    toggleTheme,
+} from "../../store/global";
 import { Sun, Moon } from "react-feather";
 import Clock from "./Clock";
 
@@ -27,6 +34,18 @@ export default function Header() {
         dispatch(toggleModalOpen(!global.modalOpen));
     }
 
+    function handleClearDashboard() {
+        if (
+            window.confirm(
+                "Are you sure? All the widgets and their contents will be deleted."
+            )
+        ) {
+            dispatch(setWidgets([]));
+            dispatch(setLayouts([]));
+            dispatch(setBoard([]));
+        }
+    }
+
     return (
         <div id="Header">
             <div className="Col">
@@ -44,6 +63,14 @@ export default function Header() {
                     data-testid="addWidgetButton"
                 >
                     <Plus size={14} style={{ marginRight: 8 }} /> Add Widget
+                </button>
+                <button
+                    className="danger"
+                    onClick={handleClearDashboard}
+                    data-testid="clearDashboard"
+                >
+                    <Trash2 size={14} style={{ marginRight: 8 }} /> Clear
+                    Dashboard
                 </button>
                 <button
                     onClick={() => {

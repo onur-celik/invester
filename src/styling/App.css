@@ -103,6 +103,11 @@ body {
     cursor: pointer;
 }
 
+#Header .Col button.danger {
+    background: red;
+    color: white;
+}
+
 #Board {
     flex: 1;
     flex-grow: 1;
