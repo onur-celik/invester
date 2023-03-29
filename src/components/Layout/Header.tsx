@@ -1,5 +1,12 @@
 import { useEffect, useState } from "react";
-import { GitHub, Plus, Maximize, Minimize, Trash2 } from "react-feather";
+import {
+    GitHub,
+    Plus,
+    Maximize,
+    Minimize,
+    Trash2,
+    RefreshCcw,
+} from "react-feather";
 import { APP_NAME, APP_TITLE } from "../../constants/config";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../store";
@@ -13,6 +20,7 @@ import {
 } from "../../store/global";
 import { Sun, Moon } from "react-feather";
 import Clock from "./Clock";
+import { INITIAL_LAYOUT, INITIAL_WIDGETS } from "../../constants/initials";
 
 export default function Header() {
     const [fullScreen, setFullScreen] = useState(false);
@@ -46,6 +54,12 @@ export default function Header() {
         }
     }
 
+    function handleResetDashboard() {
+        dispatch(setWidgets(INITIAL_WIDGETS));
+        dispatch(setLayouts(INITIAL_LAYOUT));
+        window.location.reload();
+    }
+
     return (
         <div id="Header">
             <div className="Col">
@@ -65,6 +79,13 @@ export default function Header() {
                     <Plus size={14} style={{ marginRight: 8 }} /> Add Widget
                 </button>
                 <button
+                    onClick={handleResetDashboard}
+                    data-testid="resetDashboard"
+                >
+                    <RefreshCcw size={14} style={{ marginRight: 8 }} /> Reset
+                    Dashboard
+                </button>
+                <button
                     className="danger"
                     onClick={handleClearDashboard}
                     data-testid="clearDashboard"
@@ -78,18 +99,17 @@ export default function Header() {
                             "https://github.com/onur-celik/invester";
                     }}
                 >
-                    <GitHub size={14} style={{ marginRight: 8 }} /> Source Code
+                    <GitHub size={14} />
                 </button>
                 <button
                     onClick={toggleFullscreen}
                     data-testid="fullScreenButton"
                 >
                     {fullScreen ? (
-                        <Minimize size={14} style={{ marginRight: 8 }} />
+                        <Minimize size={14} />
                     ) : (
-                        <Maximize size={14} style={{ marginRight: 8 }} />
-                    )}{" "}
-                    {fullScreen ? "Exit" : "Toggle"} Full Screen
+                        <Maximize size={14} />
+                    )}
                 </button>
             </div>
         </div>
