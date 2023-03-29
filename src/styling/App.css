@@ -125,6 +125,7 @@ body {
     position: relative;
     overflow: auto;
     padding-bottom: 300px;
+    overflow-x: hidden;
 }
 
 #ThemeSwitcher {
