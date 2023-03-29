@@ -7,7 +7,6 @@ import DynamicWidget from "./components/DynamicWidget";
 import { useSelector } from "react-redux";
 import { useBoard } from "../../hooks/useBoard";
 import { GlobalData } from "../../store/global";
-import { ArrowDownRight } from "react-feather";
 
 export type Widget = {
     i: string;
