@@ -25,7 +25,8 @@ export const AVAILABLE_WIDGETS = [
     {
         name: "TV Box",
         type_id: "TVBox",
-        requirements: [],
+        options: ["CNBC", "Bloomberg"],
+        requirements: ["select"],
     },
     {
         name: "Note",

@@ -48,15 +48,23 @@ export default function AddWidget() {
 const WidgetBox = ({
     data,
 }: {
-    data: { name: string; type_id: string; requirements: string[] };
+    data: {
+        name: string;
+        type_id: string;
+        requirements: string[];
+        options?: string[];
+    };
 }) => {
     const [symbol, setSymbol] = useState("BTCUSDT");
+    const [channel, setChannel] = useState("CNBC");
     const { save } = useBoard();
     const global = useSelector((state: GlobalData) => state);
     const dispatch = useDispatch();
+
     function handleAddWidget(data: {
         name: string;
         type_id: string;
+        options?: string[];
         requirements: string[];
     }) {
         const newId = uuidv4();
@@ -73,7 +81,9 @@ const WidgetBox = ({
             i: newId,
             type: data.type_id,
             symbol: symbol,
+            ...(data.type_id === "TVBox" ? { channel: channel } : {}),
         };
+
         save({
             layout: [...global.layouts, newLayoutItemItem],
             widgets: [...global.widgets, newWidgetItem],
@@ -93,16 +103,33 @@ const WidgetBox = ({
                 {data.name}
             </div>
             <div className="col">
-                {data.requirements.length > 0 && (
-                    <input
-                        placeholder="Symbol"
-                        className="addWidgetSymbolInput"
-                        value={symbol}
-                        onChange={(e) => {
-                            setSymbol(e.target.value);
-                        }}
-                    />
-                )}
+                {data.requirements.length > 0 &&
+                    data.requirements[0] === "symbol" && (
+                        <input
+                            placeholder="Symbol"
+                            className="addWidgetSymbolInput"
+                            value={symbol}
+                            onChange={(e) => {
+                                setSymbol(e.target.value);
+                            }}
+                        />
+                    )}
+                {data.requirements.length > 0 &&
+                    data.requirements[0] === "select" && (
+                        <select
+                            onChange={(e) => {
+                                setChannel(e.target.value);
+                            }}
+                        >
+                            {data.options?.map((opt, index) => {
+                                return (
+                                    <option key={index} value={opt}>
+                                        {opt}
+                                    </option>
+                                );
+                            })}
+                        </select>
+                    )}
             </div>
             <div className="col">
                 <button

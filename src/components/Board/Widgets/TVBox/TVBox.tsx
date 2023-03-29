@@ -1,17 +1,45 @@
-import { memo, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import DeleteWidget from "../DeleteWidget";
-const AVAILABLE_CHANNELS = [
+interface ITVChannel {
+    id: string;
+    title: string;
+    slug: string;
+}
+const AVAILABLE_CHANNELS: ITVChannel[] = [
     {
         id: "CNBC",
         title: "CNBC LIVE",
         slug: "9NyxcX3rhQs",
     },
+    {
+        id: "Bloomberg",
+        title: "Bloomberg (Turkish)",
+        slug: "hHSmBJk6w0c",
+    },
 ];
-const TVBox = memo(function ({ id }: { id: string }) {
+const TVBox = memo(function ({
+    id,
+    channel,
+}: {
+    id: string;
+    channel?: string;
+}) {
     // eslint-disable-next-line
     const [selectedChannel, setSelectedChannel] = useState(
         AVAILABLE_CHANNELS[0]
     );
+
+    useEffect(() => {
+        if (channel) {
+            console.log("SELECTED", channel);
+            setSelectedChannel(
+                AVAILABLE_CHANNELS.filter(
+                    (ch: ITVChannel) => ch.id === channel
+                )[0]
+            );
+        }
+    }, [channel]);
+
     return (
         <div className="widget TickerWidget">
             <div className="header">

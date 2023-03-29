@@ -81,7 +81,7 @@ export default function DynamicWidget({ widget }: DynamicWidgetProps) {
     }
 
     if (widget.type === "TVBox") {
-        return <TVBox id={widget.i} />;
+        return <TVBox id={widget.i} channel={widget.channel} />;
     }
 
     if (widget.type === "PodcastsWidget") {
