@@ -44,7 +44,7 @@ const NoteWidget = memo(function ({ id }: { id: string }) {
     return (
         <div className="widget NoteWidget">
             <div className="header">
-                <div className="widgetTitle">Note - {title}</div>
+                <div className="widgetTitle">Note - {title || ""}</div>
                 <DeleteWidget id={id} />
             </div>
             <div className="content">
@@ -52,7 +52,7 @@ const NoteWidget = memo(function ({ id }: { id: string }) {
                     className="note_title"
                     ref={titleRef}
                     onChange={handleNoteTitleChange}
-                    value={title}
+                    value={title || ""}
                     placeholder="Note Title"
                 />
                 <textarea

@@ -39,6 +39,7 @@ const TVBox = memo(function ({
         }
     }, [channel]);
 
+    if (!selectedChannel) return null;
     return (
         <div className="widget TickerWidget">
             <div className="header">
