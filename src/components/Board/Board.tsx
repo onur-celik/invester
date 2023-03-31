@@ -14,6 +14,7 @@ export type Widget = {
     symbol?: string;
     title?: string;
     content?: string;
+    bookmarks?: Bookmark[];
 };
 export type WidgetInfo = Widget & Layout;
 

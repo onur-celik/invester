@@ -43,4 +43,9 @@ export const AVAILABLE_WIDGETS = [
         type_id: "BTCHalvingWidget",
         requirements: [],
     },
+    {
+        name: "Bookmarks",
+        type_id: "BookmarksWidget",
+        requirements: [],
+    },
 ];

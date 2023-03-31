@@ -48,3 +48,8 @@ type UseBoardMethods = {
     getBoard: () => void;
     deleteWidget: (widgetId: string) => void;
 };
+
+type Bookmark = {
+    title: string;
+    link: string;
+};
