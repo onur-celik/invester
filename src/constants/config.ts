@@ -46,6 +46,12 @@ export const AVAILABLE_WIDGETS = [
     {
         name: "Bookmarks",
         type_id: "BookmarksWidget",
+        bookmarks: [{ title: "InvesterAPP", link: "https://in.vester.app" }],
+        requirements: [],
+    },
+    {
+        name: "Coin Signals",
+        type_id: "CoinSignalsWidget",
         requirements: [],
     },
 ];

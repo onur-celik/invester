@@ -13,6 +13,7 @@ import { GlobalData } from "../../../store/global";
 import PodcastsWidget from "../Widgets/Podcasts/PodcastsWidget";
 import BTCHalvingWidget from "../Widgets/BTCHalving/BTCHalvingWidget";
 import BookmarksWidget from "../Widgets/Bookmarks/BookmarksWidget";
+import CoinSignalsWidget from "../Widgets/CoinSignals/CoinSignalsWidget";
 
 export default function DynamicWidget({ widget }: DynamicWidgetProps) {
     const global = useSelector((state: GlobalData) => state);
@@ -92,6 +93,10 @@ export default function DynamicWidget({ widget }: DynamicWidgetProps) {
 
     if (widget.type === "BTCHalvingWidget") {
         return <BTCHalvingWidget id={widget.i} />;
+    }
+
+    if (widget.type === "CoinSignalsWidget") {
+        return <CoinSignalsWidget id={widget.i} />;
     }
 
     if (widget.type === "BookmarksWidget") {
