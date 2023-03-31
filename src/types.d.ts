@@ -35,3 +35,16 @@ type MiniChartProps = {
     symbol: string;
     id: string;
 };
+
+type UseBoardProps = {
+    layout: Layout[];
+    widgets: Widget[];
+};
+type UseBoardMethods = {
+    save: (props: UseBoardProps) => Promise<void>;
+    init: () => void;
+    createLayout: () => void;
+    generateLayoutArray: (_l: Layout[], _w: Widget[]) => Promise<WidgetInfo[]>;
+    getBoard: () => void;
+    deleteWidget: (widgetId: string) => void;
+};

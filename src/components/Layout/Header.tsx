@@ -45,7 +45,7 @@ export default function Header() {
     function handleClearDashboard() {
         if (
             window.confirm(
-                "Are you sure? All the widgets and their contents will be deleted."
+                "Are you sure? All the widgets and their contents will be resetted. You will loose your notes etc."
             )
         ) {
             dispatch(setWidgets([]));
@@ -55,9 +55,15 @@ export default function Header() {
     }
 
     function handleResetDashboard() {
-        dispatch(setWidgets(INITIAL_WIDGETS));
-        dispatch(setLayouts(INITIAL_LAYOUT));
-        window.location.reload();
+        if (
+            window.confirm(
+                "Are you sure? All the widgets and their contents will be resetted. You will loose your notes etc."
+            )
+        ) {
+            dispatch(setWidgets(INITIAL_WIDGETS));
+            dispatch(setLayouts(INITIAL_LAYOUT));
+            window.location.reload();
+        }
     }
 
     return (

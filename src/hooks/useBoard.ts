@@ -10,19 +10,6 @@ import { Layout } from "react-grid-layout";
 import { Widget, WidgetInfo } from "../components/Board/Board";
 import { INITIAL_LAYOUT, INITIAL_WIDGETS } from "../constants/initials";
 
-type UseBoardProps = {
-    layout: Layout[];
-    widgets: Widget[];
-};
-type UseBoardMethods = {
-    save: (props: UseBoardProps) => Promise<void>;
-    init: () => void;
-    createLayout: () => void;
-    generateLayoutArray: (_l: Layout[], _w: Widget[]) => Promise<WidgetInfo[]>;
-    getBoard: () => void;
-    deleteWidget: (widgetId: string) => void;
-};
-
 export const useBoard = (): UseBoardMethods => {
     const dispatch = useDispatch();
 
