@@ -160,8 +160,8 @@ body {
     position: fixed;
     top: 0px;
     left: 0px;
-    backdrop-filter: blur(3px);
-    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(13px);
+    background: rgba(0, 0, 0, 0.1);
 }
 
 .addWidgetModal {
