@@ -103,6 +103,9 @@
 
 .BookmarksWidget .content {
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .BookmarksWidget .content ul {
