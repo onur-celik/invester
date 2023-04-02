@@ -67,7 +67,7 @@ export default function Header() {
     }
 
     return (
-        <div id="Header">
+        <div id="Header" data-testid="Header">
             <div className="Col">
                 <span id="AppLogo">{APP_NAME}</span>
                 <span className="versionInfo">{APP_TITLE}</span>
@@ -100,6 +100,7 @@ export default function Header() {
                     Dashboard
                 </button>
                 <button
+                    data-testid="sourceCodeButton"
                     onClick={() => {
                         window.location.href =
                             "https://github.com/onur-celik/invester";

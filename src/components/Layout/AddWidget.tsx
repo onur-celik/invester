@@ -92,7 +92,7 @@ const WidgetBox = ({
     }
 
     return (
-        <div className="WidgetBox">
+        <div className="WidgetBox" data-testid="AddNewWidgetModal">
             <div className="col">
                 <Package />{" "}
                 <ArrowRight

@@ -27,7 +27,11 @@ const Clock: React.FC = () => {
         setLocaleTime(localeString);
     }, [time]);
 
-    return <div className="Clock">{localeTime}</div>;
+    return (
+        <div className="Clock" data-testid="Clock">
+            {localeTime}
+        </div>
+    );
 };
 
 export default Clock;
