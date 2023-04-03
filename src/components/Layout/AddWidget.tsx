@@ -1,10 +1,15 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { GlobalData, toggleModalOpen } from "../../store/global";
+import {
+    GlobalData,
+    setActiveDashboard,
+    toggleModalOpen,
+} from "../../store/global";
 import { Copy, ArrowRight, Package } from "react-feather";
 import { AVAILABLE_WIDGETS } from "../../constants/config";
 import { v4 as uuidv4 } from "uuid";
 import { useBoard } from "../../hooks/useBoard";
+import { useDashboard } from "../../hooks/useDashboard";
 
 export default function AddWidget() {
     const global: GlobalData = useSelector((state: GlobalData) => state);
@@ -60,8 +65,9 @@ const WidgetBox = ({
     const { save } = useBoard();
     const global = useSelector((state: GlobalData) => state);
     const dispatch = useDispatch();
+    const { getLocalDashboards } = useDashboard();
 
-    function handleAddWidget(data: {
+    async function handleAddWidget(data: {
         name: string;
         type_id: string;
         options?: string[];
@@ -84,10 +90,24 @@ const WidgetBox = ({
             ...(data.type_id === "TVBox" ? { channel: channel } : {}),
         };
 
-        save({
-            layout: [...global.layouts, newLayoutItemItem],
-            widgets: [...global.widgets, newWidgetItem],
-        });
+        if (global.activeDashboard === "home") {
+            save({
+                layout: [...global.layouts, newLayoutItemItem],
+                widgets: [...global.widgets, newWidgetItem],
+            });
+        } else {
+            const localDashboards = await getLocalDashboards();
+            const thisDashboard = localDashboards.filter(
+                (dashB) => dashB.id === global.activeDashboard
+            )[0];
+            save({
+                layout: [...thisDashboard.layouts, ...[newLayoutItemItem]],
+                widgets: [...thisDashboard.widgets, ...[newWidgetItem]],
+            });
+            dispatch(setActiveDashboard("home"));
+            dispatch(setActiveDashboard(thisDashboard.id));
+        }
+
         dispatch(toggleModalOpen(false));
     }
 

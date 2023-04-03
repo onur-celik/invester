@@ -119,15 +119,6 @@ body {
     color: white;
 }
 
-#Board {
-    flex: 1;
-    flex-grow: 1;
-    position: relative;
-    overflow: auto;
-    padding-bottom: 300px;
-    overflow-x: hidden;
-}
-
 #ThemeSwitcher {
     background: none !important;
     width: 80px;
@@ -287,4 +278,78 @@ body {
 #ThemeSwitcherWithAnimation #ThemeSwitcherWithAnimationInner .themeIcon.night {
     justify-content: flex-end;
     transform: rotate(60deg);
+}
+
+#Container {
+    width: 100vw;
+    display: flex;
+    flex: 1;
+}
+#Container #BoardContainer {
+    overflow: hidden;
+    overflow-y: auto;
+    height: calc(100vh - 30px);
+}
+#Container #BoardContainer #Board {
+    flex: 1;
+    position: relative;
+    overflow: auto;
+    padding-bottom: 300px;
+    overflow-x: hidden;
+    width: calc(100vw - 30px);
+}
+
+#Container #Sidebar {
+    border-radius: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    width: 30px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px 0;
+
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), transparent);
+}
+
+#App.dark #Container #Sidebar {
+    background: linear-gradient(
+        to bottom,
+        rgba(252, 184, 46, 0.2),
+        transparent
+    );
+}
+
+#Container #Sidebar .dashboard-btn {
+    width: 20px;
+    height: 20px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-weight: bold;
+
+    background: white;
+    color: var(--darkness);
+}
+
+#Container #Sidebar .dashboard-btn.active,
+#Container #Sidebar .dashboard-btn:hover {
+    background: var(--coolYellow);
+    color: var(--darkness);
+}
+
+#App.dark #Container #Sidebar .dashboard-btn {
+    background: rgba(252, 184, 46, 0.3);
+    color: var(--coolYellow);
+}
+
+#App.dark #Container #Sidebar .dashboard-btn.active,
+#App.dark #Container #Sidebar .dashboard-btn:hover {
+    background: var(--coolYellow);
+    color: var(--darkness);
 }
