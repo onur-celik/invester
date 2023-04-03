@@ -53,3 +53,9 @@ type Bookmark = {
     title: string;
     link: string;
 };
+
+type Dashboard = {
+    id: string;
+    widgets: Widget[];
+    layouts: Layout[];
+};

@@ -45,12 +45,30 @@ export default function Board() {
                     layout={global.board}
                     cols={24}
                     rowHeight={35}
-                    width={window.innerWidth}
+                    width={window.innerWidth - 40}
                     onDragStop={async (layout) => {
-                        save({ layout, widgets: global.widgets });
+                        if (global.activeDashboard === "home") {
+                            save({ layout, widgets: global.widgets });
+                        } else {
+                            const thisDashboard: Dashboard =
+                                global.dashboards.find(
+                                    (dashB) =>
+                                        dashB.id === global.activeDashboard
+                                ) as Dashboard;
+                            save({ layout, widgets: thisDashboard.widgets });
+                        }
                     }}
                     onResizeStop={async (layout) => {
-                        save({ layout, widgets: global.widgets });
+                        if (global.activeDashboard === "home") {
+                            save({ layout, widgets: global.widgets });
+                        } else {
+                            const thisDashboard: Dashboard =
+                                global.dashboards.find(
+                                    (dashB) =>
+                                        dashB.id === global.activeDashboard
+                                ) as Dashboard;
+                            save({ layout, widgets: thisDashboard.widgets });
+                        }
                     }}
                 >
                     {global.board.map((widget: WidgetInfo) => {

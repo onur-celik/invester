@@ -8,6 +8,8 @@ export type GlobalData = {
     board: WidgetInfo[];
     layout_changed: boolean;
     theme: "dark" | "light";
+    activeDashboard: string;
+    dashboards: Dashboard[];
 };
 
 const initialState: GlobalData = {
@@ -17,6 +19,8 @@ const initialState: GlobalData = {
     board: [],
     layout_changed: false,
     theme: "light",
+    activeDashboard: "home",
+    dashboards: [],
 };
 
 const globalSlice = createSlice({
@@ -47,6 +51,14 @@ const globalSlice = createSlice({
             state.theme = action.payload;
             localStorage.setItem("theme", action.payload);
         },
+        setActiveDashboard: (state, action) => {
+            state.activeDashboard = action.payload;
+            localStorage.setItem("activeDashboard", action.payload);
+        },
+        setDashboards: (state, action) => {
+            state.dashboards = action.payload;
+            localStorage.setItem("dashboards", JSON.stringify(action.payload));
+        },
     },
 });
 
@@ -57,5 +69,7 @@ export const {
     setBoard,
     toggleLayoutChanged,
     toggleTheme,
+    setActiveDashboard,
+    setDashboards,
 } = globalSlice.actions;
 export default globalSlice.reducer;
