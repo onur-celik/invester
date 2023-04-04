@@ -61,8 +61,11 @@ export default function Sidebar() {
                     <Box size={12} />
                 </div>
             ))}
-            <div className="dashboard-btn active" onClick={createNewDashboard}>
-                <Plus size={12} />
+            <div
+                className="dashboard-btn add-button"
+                onClick={createNewDashboard}
+            >
+                <Plus size={16} />
             </div>
         </div>
     );

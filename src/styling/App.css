@@ -1,4 +1,5 @@
-@import "./Colors.css";
+@import "./Theme.css";
+@import "./Fonts.css";
 
 * {
     box-sizing: border-box;
@@ -12,7 +13,7 @@
 
 ::-webkit-scrollbar-thumb {
     border-radius: 8px;
-    background-color: var(--coolYellow);
+    background-color: var(--border-color);
 }
 
 body {
@@ -32,15 +33,7 @@ body {
 #App {
     width: 100vw;
     height: 100vh;
-}
-
-#App.dark {
-    background-color: var(--darkness);
-}
-
-#App.light {
-    /* background-color: rgba(0, 0, 0, 0.1); */
-    background-color: var(--lightBackground);
+    background-color: var(--bg-color);
 }
 
 #Layout {
@@ -57,23 +50,20 @@ body {
 
 #Header {
     width: 100vw;
-    height: 30px;
+    height: 25px;
     display: flex;
     align-items: center;
     padding: 0 10px;
+    padding-right: 0px;
     font-size: 12px;
     display: flex;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--header-text-color);
+    background: var(--header-bg);
 }
 
 #AppLogo {
     font-weight: 900;
-}
-
-#App.dark #Header {
-    color: var(--coolYellow);
-}
-#App.light #Header {
-    color: var(--darkness);
 }
 
 #Header .Col {
@@ -91,32 +81,32 @@ body {
 }
 
 #Header .Col button {
-    margin-left: 10px;
+    background: none;
+    height: 25px;
     border: none;
     outline: none;
-    height: 20px;
-    border-radius: 4px;
     padding: 0px 10px;
-    background-color: var(--textGray);
     transition: color 0.2s ease-out, background-color 0.2s ease-out;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 12px;
-    font-weight: 900;
-    color: #fff;
+    border-left: 1px solid var(--border-color);
+    border-bottom: 1px solid transparent;
+    color: var(--header-button-text);
 }
 
 #Header .Col button.active,
 #Header .Col button:hover {
-    background-color: var(--coolYellow);
-    color: black;
+    background: var(--button-active-bg);
+    border-bottom: 1px solid var(--border-color);
     cursor: pointer;
+    color: var(--header-button-active-text);
 }
 
-#Header .Col button.danger {
-    background: red;
-    color: white;
+#Header .Col button.danger:hover {
+    background: rgba(255, 0, 0, 0.2);
+    color: var(--danger-button-text);
 }
 
 #ThemeSwitcher {
@@ -133,13 +123,6 @@ body {
 .versionInfo {
     color: var(--textGray);
     margin-left: 10px;
-}
-
-.Draggable {
-    position: absolute;
-    z-index: 10;
-    resize: both;
-    background-color: var(--darkness);
 }
 
 .addWidgetModalBackDrop {
@@ -300,56 +283,36 @@ body {
 }
 
 #Container #Sidebar {
-    border-radius: 10px;
-    margin-left: 10px;
-    margin-bottom: 10px;
     width: 30px;
-    height: 600px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 5px 0;
-
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), transparent);
-}
-
-#App.dark #Container #Sidebar {
-    background: linear-gradient(
-        to bottom,
-        rgba(252, 184, 46, 0.2),
-        transparent
-    );
+    background: var(--sidebar-bg);
+    border-right: 1px solid var(--border-color);
 }
 
 #Container #Sidebar .dashboard-btn {
-    width: 20px;
-    height: 20px;
-    border-radius: 8px;
+    width: 30px;
+    height: 30px;
     display: flex;
+    border-right: 1px solid transparent;
     justify-content: center;
     align-items: center;
     font-size: 10px;
-    margin-bottom: 10px;
     cursor: pointer;
     font-weight: bold;
-
-    background: white;
-    color: var(--darkness);
+    color: var(--sidebar-button-text);
+    border-bottom: 1px solid var(--border-color);
 }
 
+/* .add-button {
+    background: var(--add-button-bg) !important;
+    color: var(--add-button-text) !important;
+} */
 #Container #Sidebar .dashboard-btn.active,
 #Container #Sidebar .dashboard-btn:hover {
-    background: var(--coolYellow);
-    color: var(--darkness);
-}
-
-#App.dark #Container #Sidebar .dashboard-btn {
-    background: rgba(252, 184, 46, 0.3);
-    color: var(--coolYellow);
-}
-
-#App.dark #Container #Sidebar .dashboard-btn.active,
-#App.dark #Container #Sidebar .dashboard-btn:hover {
-    background: var(--coolYellow);
-    color: var(--darkness);
+    background: var(--button-active-bg);
+    color: var(--sidebar-button-active-text);
+    border-right: 1px solid var(--border-color);
 }

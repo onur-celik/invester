@@ -72,13 +72,13 @@ export default function Header() {
                 <span id="AppLogo">{APP_NAME}</span>
                 <span className="versionInfo">{APP_TITLE}</span>
             </div>
-            <div className="Col">
-                <Clock />
-            </div>
+
+            <div className="Col"></div>
+
             <div className="Col">
                 <ThemeSwitcherWithAnimation />
                 <button
-                    className="active"
+                    className="add-button"
                     onClick={handleModal}
                     data-testid="addWidgetButton"
                 >
@@ -117,6 +117,9 @@ export default function Header() {
                     ) : (
                         <Maximize size={14} />
                     )}
+                </button>
+                <button>
+                    <Clock />
                 </button>
             </div>
         </div>

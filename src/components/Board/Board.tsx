@@ -41,7 +41,7 @@ export default function Board() {
                     preventCollision={false}
                     verticalCompact={true}
                     className="layout"
-                    containerPadding={[10, 0]}
+                    containerPadding={[10, 10]}
                     layout={global.board}
                     cols={24}
                     rowHeight={35}

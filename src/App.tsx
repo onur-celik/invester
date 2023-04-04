@@ -15,7 +15,7 @@ function App() {
         // eslint-disable-next-line
     }, []);
     return (
-        <div id="App" className={global.theme}>
+        <div id="App" className={global.theme} data-theme={global.theme}>
             <Layout />
         </div>
     );
