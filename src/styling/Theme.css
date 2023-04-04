@@ -1,0 +1,38 @@
+@import "./Colors.css";
+
+root,
+[data-theme="light"] {
+    --bg-color: #d6dfdc;
+    --header-text-color: var(--darkness);
+    --header-button-text: var(--darkness);
+    --header-button-active-text: var(--darkness);
+    --sidebar-bg: linear-gradient(to top, rgba(0, 0, 0, 0.1), transparent);
+    --sidebar-button-text: var(--darkness);
+    --sidebar-button-bg: white;
+    --sidebar-button-active-bg: var(--coolYellow);
+    --sidebar-button-active-text: var(--darkness);
+    --border-color: #9faaa6;
+    --header-bg: linear-gradient(to right, rgba(0, 0, 0, 0.1), transparent);
+    --button-active-bg: #bcc8c4;
+    --add-button-bg: #1f44fb;
+    --add-button-text: #ffffff;
+    --danger-button-text: var(--darkness);
+}
+
+[data-theme="dark"] {
+    --bg-color: var(--darkness);
+    --header-text-color: var(--coolYellow);
+    --header-button-text: var(--coolYellow);
+    --header-button-active-text: var(--darkness);
+    --sidebar-bg: linear-gradient(to top, rgba(0, 0, 0, 0.1), transparent);
+    --header-bg: linear-gradient(to right, rgba(0, 0, 0, 0.1), transparent);
+    --border-color: #9faaa640;
+    --sidebar-button-text: var(--coolYellow);
+    --sidebar-button-bg: rgba(252, 184, 46, 0.3);
+    --sidebar-button-active-bg: var(--coolYellow);
+    --sidebar-button-active-text: var(--darkness);
+    --button-active-bg: var(--coolYellow);
+    --add-button-bg: #1f44fb;
+    --add-button-text: #ffffff;
+    --danger-button-text: #ffffff;
+}
