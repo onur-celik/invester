@@ -8,7 +8,14 @@ export const useDashboard = () => {
     const dispatch = useDispatch();
     const { dashboards } = useSelector((state: GlobalData) => state);
 
-    const saveDashboards = () => {};
+    const saveDashboards = (dashboardsArr: Dashboard[]) => {
+        try {
+            localStorage.setItem("dashboards", JSON.stringify(dashboardsArr));
+            return true;
+        } catch (err: any) {
+            throw new Error(err.message);
+        }
+    };
 
     const createNewDashboard = async () => {
         const newId = uuidv4();

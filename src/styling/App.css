@@ -33,6 +33,9 @@ body {
     width: 100vw;
     height: 100vh;
     background-color: var(--bg-color);
+    background-image: url("../../public/assets/images/board-bg.png");
+    background-repeat: no-repeat;
+    background-position: right bottom;
 }
 
 #Layout {
@@ -289,6 +292,7 @@ body {
     align-items: center;
     background: var(--sidebar-bg);
     border-right: 1px solid var(--border-color);
+    z-index: 999;
 }
 
 #Container #Sidebar .dashboard-btn {
@@ -303,12 +307,33 @@ body {
     font-weight: bold;
     color: var(--sidebar-button-text);
     border-bottom: 1px solid var(--border-color);
+    position: relative;
+}
+#Container #Sidebar .dashboard-btn .dashboard-btn-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
 }
 
-/* .add-button {
-    background: var(--add-button-bg) !important;
-    color: var(--add-button-text) !important;
-} */
+#Container #Sidebar .dashboard-btn .dashboard-btn-tooltip {
+    display: none;
+    position: absolute;
+    background: var(--dashboard-btn-tooltip-bg);
+    color: var(--dashboard-btn-tooltip-text);
+    width: 30px;
+    height: 30px;
+    z-index: 9;
+    justify-content: center;
+    align-items: center;
+    left: 30px;
+}
+
+#Container #Sidebar .dashboard-btn:hover .dashboard-btn-tooltip {
+    display: flex;
+}
+
 #Container #Sidebar .dashboard-btn.active,
 #Container #Sidebar .dashboard-btn:hover {
     background: var(--button-active-bg);

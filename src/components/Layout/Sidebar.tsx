@@ -1,4 +1,4 @@
-import { Home, Plus, Box } from "react-feather";
+import { Home, Plus, Box, Trash2 } from "react-feather";
 import { useDispatch, useSelector } from "react-redux";
 import {
     GlobalData,
@@ -15,13 +15,13 @@ export default function Sidebar() {
     const { activeDashboard, dashboards } = useSelector(
         (state: GlobalData) => state
     );
-    const { createNewDashboard, getLocalDashboards, getLocalActiveDashboard } =
-        useDashboard();
+    const {
+        createNewDashboard,
+        getLocalDashboards,
+        getLocalActiveDashboard,
+        saveDashboards,
+    } = useDashboard();
     const { createLayout } = useBoard();
-
-    // useEffect(() => {
-    //     console.log("\n\n Sidebar, Dashboards watch ====>>>", dashboards);
-    // }, [dashboards]);
 
     useEffect(() => {
         (async () => {
@@ -37,6 +37,25 @@ export default function Sidebar() {
         dispatch(setActiveDashboard(activeDashboard));
         createLayout();
     }, [activeDashboard]);
+
+    function handleDeleteDashboard(dashboardId: string) {
+        if (
+            window.confirm(
+                "Are you certain that you wish to delete this dashboard? Please be aware that all of the data associated with it will be permanently lost. Would you like to proceed with this action?"
+            )
+        ) {
+            const filteredDashboards = dashboards.filter(
+                (dashB) => dashB.id != dashboardId
+            );
+
+            const save = saveDashboards(filteredDashboards);
+
+            if (save) {
+                dispatch(setDashboards(filteredDashboards));
+                dispatch(setActiveDashboard("home"));
+            }
+        }
+    }
 
     return (
         <div id="Sidebar">
@@ -54,11 +73,23 @@ export default function Sidebar() {
                     className={`dashboard-btn ${
                         activeOne === dashB.id && "active"
                     }`}
-                    onClick={() => {
-                        dispatch(setActiveDashboard(dashB.id));
-                    }}
                 >
-                    <Box size={12} />
+                    <div
+                        className="dashboard-btn-tooltip"
+                        onClick={() => {
+                            handleDeleteDashboard(dashB.id);
+                        }}
+                    >
+                        <Trash2 size={12} />
+                    </div>
+                    <div
+                        className="dashboard-btn-button"
+                        onClick={(e) => {
+                            dispatch(setActiveDashboard(dashB.id));
+                        }}
+                    >
+                        <Box size={12} />
+                    </div>
                 </div>
             ))}
             <div

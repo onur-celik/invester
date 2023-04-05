@@ -17,6 +17,8 @@ root,
     --add-button-bg: #1f44fb;
     --add-button-text: #ffffff;
     --danger-button-text: var(--darkness);
+    --dashboard-btn-tooltip-bg: red;
+    --dashboard-btn-tooltip-text: #fff;
 }
 
 [data-theme="dark"] {
@@ -35,4 +37,6 @@ root,
     --add-button-bg: #1f44fb;
     --add-button-text: #ffffff;
     --danger-button-text: #ffffff;
+    --dashboard-btn-tooltip-bg: #fff;
+    --dashboard-btn-tooltip-text: #000;
 }
